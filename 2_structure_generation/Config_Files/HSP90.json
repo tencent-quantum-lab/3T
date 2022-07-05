@@ -1,0 +1,9 @@
+{"protein": "1uyg",
+ "ligand_epoch": 200,
+ "complex_epochs": [200, 2000],
+ "kick_center": [2.3558855375608507, 10.045364266083117, 24.995132864932174],
+ "kick_radius": 20.0,
+ "kick_strength": 5.0,
+ "print_freq": 10,
+ "conformers": 10,
+ "init_random_seed": 12345}

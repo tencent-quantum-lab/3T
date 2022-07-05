@@ -1,0 +1,9 @@
+{"protein": "1fin_ENS_dH",
+ "ligand_epoch": 200,
+ "complex_epochs": [200, 2000],
+ "kick_center": [-13.094694, 205.03195, 114.42654],
+ "kick_radius": 25.0,
+ "kick_strength": 5.0,
+ "print_freq": 10,
+ "conformers": 10,
+ "init_random_seed": 12345}
