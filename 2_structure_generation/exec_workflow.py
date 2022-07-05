@@ -1,4 +1,5 @@
 import os, time, random
+import json
 import psutil
 import numpy as np
 import multiprocessing as mp
@@ -77,40 +78,48 @@ def exec_job(job_args):
     return pid
 
 if __name__ == '__main__':
+    n_args = 1
+    if len(sys.argv) != n_args+1:
+        sys.exit("\n" +
+                 " *** IMPORTANT ***\n" +
+                 "This script takes one argument:\n" +
+                 "1) Hyperparameter config file\n")
+    assert len(sys.argv) == n_args+1, "Wrong number of arguments given"
+    
     # Define job list and hyperparameters
     job_list = []
-    ligand_epoch = 200
-    complex_epochs = [200,2000]
-    kick_center = [-13.094694, 205.03195, 114.42654]
-    kick_radius = 20.0
-    kick_strength = 5.0
-    print_freq = 10
-    conformers = 10
-    init_random_seed = 12345
+    config = json.load(open( str(sys.argv[1]), 'r' ))
+    protein = config['protein']
+    ligand_epoch = config['ligand_epoch']
+    complex_epochs = config['complex_epochs']
+    kick_center = config['kick_center']
+    kick_radius = config['kick_radius']
+    kick_strength = config['kick_strength']
+    print_freq = config['print_freq']
+    conformers = config['conformers']
+    init_random_seed = config['init_random_seed']
     np.random.seed(init_random_seed)
     kick_seeds = np.random.randint(100000, size=conformers)
 
-    proteins = os.listdir('Input_Structures')
     cwd = os.getcwd()
-    for protein in proteins:
-        pro_folder = os.path.join('Input_Structures',protein)
-        pro_pdb = [name for name in os.listdir(pro_folder) if name.endswith('.pdb')]
-        assert len(pro_pdb) == 1, 'There are more than 1 protein structure in '+pro_folder
-        pro_pdb = pro_pdb[0]
-        pro_pdb_path = os.path.join(cwd,pro_folder,pro_pdb)
-        ligand_folder = os.path.join(pro_folder,'Ligands')
-        ligand_sets = os.listdir(ligand_folder)
+    pro_folder = os.path.join('Input_Structures',protein)
+    pro_pdb = [name for name in os.listdir(pro_folder) if name.endswith('.pdb')]
+    assert len(pro_pdb) == 1, 'There are more than 1 protein structure in '+pro_folder
+    pro_pdb = pro_pdb[0]
+    pro_pdb_path = os.path.join(cwd,pro_folder,pro_pdb)
+    ligand_folder = os.path.join(pro_folder,'Ligands')
+    ligand_sets = os.listdir(ligand_folder)
 
-        for ligand_set in ligand_sets:
-            ligand_subfolder = os.path.join(ligand_folder,ligand_set)
-            if os.path.isfile(ligand_subfolder):
-                continue
-            ligands = [name for name in os.listdir(ligand_subfolder) if name.endswith('.mol2')]
+    for ligand_set in ligand_sets:
+        ligand_subfolder = os.path.join(ligand_folder,ligand_set)
+        if os.path.isfile(ligand_subfolder):
+            continue
+        ligands = [name for name in os.listdir(ligand_subfolder) if name.endswith('.mol2')]
 
-            for ligand in ligands:
-                lig_mol2_path = os.path.join(cwd,ligand_subfolder,ligand)
-                
-                job_list.append( tuple((pro_pdb_path, lig_mol2_path)) )
+        for ligand in ligands:
+            lig_mol2_path = os.path.join(cwd,ligand_subfolder,ligand)
+            
+            job_list.append( tuple((pro_pdb_path, lig_mol2_path)) )
 
     # Limit job count for testing
     #job_list = job_list[0:1]
