@@ -1,4 +1,4 @@
-{"protein": "1uyg",
+{"protein": "1uyg_ENS",
  "ligand_epoch": 200,
  "complex_epochs": [200, 2000],
  "kick_center": [2.3558855375608507, 10.045364266083117, 24.995132864932174],

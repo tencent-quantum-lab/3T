@@ -1,7 +1,7 @@
 import os, sys
 from convert_complex import temp_dir_cleanup, pdb2gmx, convert_gromacs_lammps_complex
 import torch
-sys.path.append('./GL_modules/')
+sys.path.append(os.path.join('.','GL_modules',''))
 from GL_modules.GL_potential_model import PotentialModel
 from GL_modules.GL_data import data
 
@@ -11,6 +11,7 @@ def calculate_baseline(pdb_tag):
     assert len(pdb_files)==1, 'Input folder '+pro_folder+' has more than one *.pdb file'
 
     for pdb_file in pdb_files:
+        print('Converting the protein structure '+pdb_file+' into GROMACS format...')
         # Placeholder pid
         pid = 0
         
@@ -32,6 +33,7 @@ def calculate_baseline(pdb_tag):
         pdb2gmx(clean_pro, proc_pro, reply_txt)
 
         # Convert complex Gromacs files to LAMMPS format files
+        print('Converting the GROMACS format into LAMMPS format...')
         top_file = 'topol.top'
         convert_gromacs_lammps_complex(proc_pro, top_file)
 
@@ -42,6 +44,7 @@ def calculate_baseline(pdb_tag):
         data_struct = data(gro_lammps_in, gro_lammps_data)
 
         ## Generate torch device
+        print('Loading LAMMPS format into 3T model and calculating energy...')
         device = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')
 
         ## Model construction
@@ -58,9 +61,11 @@ def calculate_baseline(pdb_tag):
             f.write(outE)
 
         ## Write output
-        out_folder = pro_folder
+        out_folder = os.path.join( os.getcwd(), '..', 'Converted_Structures', pdb_tag )
         if not os.path.isdir(out_folder): os.mkdir(out_folder)
         os.system(' '.join(['cp', out_E_file, out_folder+'/']))
+        print('Baseline protein energy written onto '+os.path.join(out_folder,out_E_file))
+        print('')
 
         # Empty temp folder from unnecessary temporary files
         temp_dir_cleanup(lig_ff_folder)

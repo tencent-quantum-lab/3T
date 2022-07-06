@@ -96,7 +96,10 @@ def run_model(inverse_model, optimizers, E_target, n_epoch, out_tag, schedulers=
         out_hist[epoch] = outp_E.detach().cpu().numpy()
         xyz_hist[epoch+1,:,:] = inverse_model.atom_pos.detach().cpu().numpy()
 
-        if epoch % print_freq == 0: print_log('Step:'+str(epoch))
+        if epoch % print_freq == 0:
+            print_log('Step:'+str(epoch))
+            print('Step:'+str(epoch))
+            
     # Clear the gradient after finishing the minimization
     for optimizer in optimizers:
         optimizer.zero_grad()

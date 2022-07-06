@@ -8,7 +8,10 @@ from convert_complex import main as main_convert_complex
 from minimize_GL_ligand import main as main_minimize_ligand
 from minimize_GL_complex import main as main_minimize_complex
 
+verbose = True
+
 def print_log(log_file, message):
+    if verbose: print(message)
     if os.path.isfile(log_file): mode = 'a'
     else: mode = 'w'
     with open(log_file,mode) as f:
@@ -16,12 +19,12 @@ def print_log(log_file, message):
     return
 
 def exec_job(job_args):
+    # Extract input parameters
+    pid, ligand_epoch, complex_epochs, kick_center, kick_radius, kick_strength, kick_seeds, print_freq, job_list, cpu_count = job_args
+
     # Prevent each CPU from trying to parallelize across CPU's and fighting for resources
     if (not torch.cuda.is_available()) and (cpu_count > 1):
         torch.set_num_threads(1)
-
-    # Extract input parameters
-    pid, ligand_epoch, complex_epochs, kick_center, kick_radius, kick_strength, kick_seeds, print_freq, job_list = job_args
 
     # Pin this process to a specific CPU if we are not using GPU
     if (not torch.cuda.is_available()) and (cpu_count > 1):
@@ -39,8 +42,13 @@ def exec_job(job_args):
         pro = pro_pdb_path.split('/')[-2]
         lig = '/'.join(lig_mol2_path.split('/')[-2:])[:-5]
         convert_folder = os.path.join(cwd,'Converted_Structures',pro,lig)
-
+        print('Working on protein:')
+        print(pro)
+        print('Pocket docked with ligand:')
+        print(lig)
+        
         # First we convert the protein ligand complex and the standalone ligand
+        print('Parametrizing ligand force field and converting to GROMACS-LAMMPS format...')
         for n_retry in range(3):
             # We put the multiple retry and random time delay to prevent overloading SwissParam force field webserver
             # during large-scale ligand batch conversion
@@ -54,6 +62,7 @@ def exec_job(job_args):
                 print_log(os.path.join(cwd,log_file), 'Exception : convert_complex '+os.path.join(pro,lig))
 
         # Then we minimize the standalone ligand
+        print('3T ligand relaxation within rigid protein pocket...')
         os.chdir(cwd)
         try:
             main_minimize_ligand(pid, convert_folder, ligand_epoch, print_freq)
@@ -61,7 +70,9 @@ def exec_job(job_args):
             print_log(log_file, 'Exception : minimize_GL_ligand '+os.path.join(pro,lig))
 
         # Then we minimize the protein ligand complex several times (multiple conformers)
+        print('3T energetic kick & pocket relaxation...')
         for kick_seed in kick_seeds:
+            print('Energetic kick random seed:',kick_seed)
             kick_prop = [kick_center, kick_radius, kick_strength, kick_seed]
             
             os.chdir(cwd)
@@ -74,21 +85,19 @@ def exec_job(job_args):
             print_log(log_file, 'Finish '+str(finish_count)+'/'+str(total_count)+' jobs')
 
     os.chdir(cwd)
+    print('')
+    print('')
             
     return pid
 
-if __name__ == '__main__':
-    n_args = 1
-    if len(sys.argv) != n_args+1:
-        sys.exit("\n" +
-                 " *** IMPORTANT ***\n" +
-                 "This script takes one argument:\n" +
-                 "1) Hyperparameter config file\n")
-    assert len(sys.argv) == n_args+1, "Wrong number of arguments given"
-    
+def main(json_config):
+    print('Utilizing '+json_config+' config file...')
     # Define job list and hyperparameters
     job_list = []
-    config = json.load(open( str(sys.argv[1]), 'r' ))
+    config = json.load(open( json_config, 'r' ))
+    print('Config file content:')
+    print(config)
+    print('')
     protein = config['protein']
     ligand_epoch = config['ligand_epoch']
     complex_epochs = config['complex_epochs']
@@ -128,6 +137,9 @@ if __name__ == '__main__':
     cpu_count = mp.cpu_count()
     if torch.cuda.is_available():
         cpu_count = 1    # if we are using GPU, don't split the jobs across CPU cores
+        print('We are using 1 GPU')
+    else:
+        print('We are using',cpu_count,'CPUs')
     #cpu_count = 1
     job_count = len(job_list)
 
@@ -141,7 +153,8 @@ if __name__ == '__main__':
                     complex_epochs,
                     kick_center, kick_radius, kick_strength, kick_seeds,
                     print_freq,
-                    pid_job_list]
+                    pid_job_list,
+                    cpu_count]
         pool_job_args_list.append(job_args)
 
     # Launch the process-based jobs
@@ -157,4 +170,19 @@ if __name__ == '__main__':
         # Complete the processes
         for proc in procs:
             proc.join()
+
+    return
+
+if __name__ == '__main__':
+    n_args = 1
+    if len(sys.argv) != n_args+1:
+        sys.exit("\n" +
+                 " *** IMPORTANT ***\n" +
+                 "This script takes one argument:\n" +
+                 "1) Hyperparameter config file\n")
+    assert len(sys.argv) == n_args+1, "Wrong number of arguments given"
+
+    main( str(sys.argv[1]) )
+    
+    
 
