@@ -1,5 +1,5 @@
 import os, time, sys
-sys.path.append('./GL_modules/')
+sys.path.append(os.path.join('.','GL_modules',''))
 from GL_modules.GL_data import data
 import numpy as np
 

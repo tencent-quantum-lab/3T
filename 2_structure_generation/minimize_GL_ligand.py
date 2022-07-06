@@ -2,7 +2,7 @@ import numpy as np
 import torch
 import torch.optim as optim
 import sys, os
-sys.path.append('./GL_modules/')
+sys.path.append(os.path.join('.','GL_modules',''))
 from GL_modules.GL_potential_model import PotentialModel
 from GL_modules.GL_data import data
 from GL_modules.GL_data_util import segmentize_nearby_protein_atoms, extract_ligand_idx, segmentize_complex_ligand
