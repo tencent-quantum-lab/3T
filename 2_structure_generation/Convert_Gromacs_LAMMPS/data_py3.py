@@ -1,3 +1,7 @@
+# This is the Python 3 implementation of data.py from SandiaNational Laboratory's
+# LAMMPS Pizza.py toolkit:
+# https://lammps.github.io/pizza/
+#
 # Pizza.py toolkit, www.cs.sandia.gov/~sjplimp/pizza.html
 # Steve Plimpton, sjplimp@sandia.gov, Sandia National Laboratories
 #
