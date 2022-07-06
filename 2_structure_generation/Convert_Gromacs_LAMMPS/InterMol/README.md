@@ -6,7 +6,7 @@ InterMol: a conversion tool for molecular dynamics simulations
 
 We are currently in beta testing phase. Desmond<=>Gromacs<=>Lammps conversions are carried out natively in InterMol.  AMBER->X is carried out by converting AMBER to GROMACS, then to other programs using ParmEd. AMBER->CHARMM is carried out by ParmEd directly.
 
-<b>This version of InterMol has been edited by Jonathan Mailoa (some bugs are fixed).</b>
+`<b>This version of InterMol has been edited by Jonathan Mailoa (some bugs are fixed).</b>`
 
 ### [Installation instructions](doc/installation.rst)
 
