@@ -7,7 +7,6 @@ from GL_modules.GL_potential_model import PotentialModel
 from GL_modules.GL_data import data
 from GL_modules.GL_data_util import segmentize_nearby_protein_atoms, extract_ligand_idx, segmentize_complex_ligand
 from GL_modules.GL_data_util import generate_special_rotation_axes
-import matplotlib.pyplot as plt
 from torch.nn.parameter import Parameter
 import ase
 import ase.io as io

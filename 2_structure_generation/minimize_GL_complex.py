@@ -10,7 +10,6 @@ from GL_modules.GL_data_util import separate_protein_backbone_sidechain, segment
 from GL_modules.GL_data_util import segmentize_protein_atoms_from_center
 from GL_modules.GL_data_util import generate_special_rotation_axes
 from GL_modules.GL_data_util import generate_macro_mode
-import matplotlib.pyplot as plt
 from torch.nn.parameter import Parameter
 import ase
 import ase.io as io
