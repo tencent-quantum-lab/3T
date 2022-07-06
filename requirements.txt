@@ -4,7 +4,6 @@ six
 torch
 bs4
 mechanize
-multiprocessing
 psutil
 ase
 matplotlib
