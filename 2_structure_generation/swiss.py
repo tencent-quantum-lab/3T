@@ -1,5 +1,6 @@
 ### This is the SwissParam webserver ligand force field parametrization code taken from:
 ### https://github.com/aaayushg/charmm_param/blob/master/swiss.py
+### This code was originally written by Aayush Gupta.
 
 from bs4 import BeautifulSoup
 from xml.dom import minidom

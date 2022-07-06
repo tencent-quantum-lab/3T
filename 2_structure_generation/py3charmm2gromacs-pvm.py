@@ -22,6 +22,8 @@ outfiles:
 
 ### This is the Python 3 implementation of CHARMM to GROMACS force field format conversion code from:
 ### https://github.com/zyxue/gromacs_top_4.5.5/blob/master/cgenff-2b7.ff/src/charmm2gromacs-pvm.py
+### According to the documentation, this file was originally downloaded from:
+### http://www.gromacs.org/Downloads/User_contributions/Force_fields
 
 import sys
 import math
