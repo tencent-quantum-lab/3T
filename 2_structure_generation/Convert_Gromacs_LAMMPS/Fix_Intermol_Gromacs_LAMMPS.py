@@ -182,31 +182,6 @@ class Fix_LAMMPS:
         for atom in atoms:
             atom[1] = mol_table[atom[0]]
 
-##        mol_id = 1
-##        species_dict = dict()
-##        species_dict['4'] = 'Li'
-##        species_dict['5'] = 'B'
-##        species_dict['6'] = 'C'
-##        species_dict['7'] = 'N'
-##        for molecule in [cation[9],cation[19]]:
-##            print 'Molecule '+str(mol_id)
-##            for atom in molecule.keys():
-##                atom_species = species_dict[ molecule[atom] ]
-##                print atom_species +\
-##                      ' ' + str(atoms[int(atom)-1][4]) +\
-##                      ' ' + str(atoms[int(atom)-1][5]) +\
-##                      ' ' + str(atoms[int(atom)-1][6])
-##            mol_id += 1
-##        for molecule in [anion[0],anion[14]]:
-##            print 'Molecule '+str(mol_id)
-##            for atom in molecule.keys():
-##                atom_species = species_dict[ molecule[atom] ]
-##                print atom_species +\
-##                      ' ' + str(atoms[int(atom)-1][4]) +\
-##                      ' ' + str(atoms[int(atom)-1][5]) +\
-##                      ' ' + str(atoms[int(atom)-1][6])
-##            mol_id += 1
-        
         return raw_sections
         
 
@@ -261,42 +236,3 @@ class Fix_LAMMPS:
 #dat = Fix_LAMMPS('../gromacs_example_3/complex_converted.input',
 #                              '../gromacs_example_3/complex_converted.lmp',
 #                              'testonly.dat')
-
-#dat = Fix_LAMMPS('MD_GPU150_converted.input','MD_GPU150_converted.lmp','MD_GPU150.data')
-
-##dat = dt.data('MD_GPU150_converted.lmp')
-##
-##lines = dat.sections['Bond Coeffs']
-##new_lines = []
-##for i in range(len(lines)):
-##    words = str.split(lines[i])
-##    words.pop(1)
-##    new_line = " ".join(words) + '\n'
-##    new_lines.append(new_line)
-##dat.sections['Bond Coeffs'] = new_lines
-##
-##lines = dat.sections['Angle Coeffs']
-##new_lines = []
-##for i in range(len(lines)):
-##    words = str.split(lines[i])
-##    words.pop(1)
-##    new_line = " ".join(words) + '\n'
-##    new_lines.append(new_line)
-##dat.sections['Angle Coeffs'] = new_lines
-##
-##lines = dat.sections['Dihedral Coeffs']
-##new_lines = []
-##for i in range(len(lines)):
-##    words = str.split(lines[i])
-##    words.pop(1)
-##    new_line = " ".join(words) + '\n'
-##    new_lines.append(new_line)
-##dat.sections['Dihedral Coeffs'] = new_lines
-##
-##output = dt.data()
-##output.title = dat.title
-##output.headers = dat.headers
-##output.sections = dat.sections
-##output.write('MD_CPU150_postprocess.txt')
-##    
-##
