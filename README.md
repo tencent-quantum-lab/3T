@@ -10,6 +10,11 @@ generating new structures in the process while easily escaping trivial local ene
 
 ![Alt text](2_structure_generation/Images/3T_Model.png?raw=true "Title")
 
+As can be seen from the figure above, 3T does not require training data. The structure transformation module is purely PyTorch-based, while the structure evaluation cost function is a differentiable classical force field function.
+No machine learning (ML) training data is necessary for the structure generation.
+Running PyTorch backward propagation on this model does not directly update the structure; it updates the local structure transformation parameters instead.
+3T is neither an ML nor an MD approach, but it utilizes many components found in both ML and MD.
+
 ## Dependency
 
 Run the following command from the current directory to build dependency:
