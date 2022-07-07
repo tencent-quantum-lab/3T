@@ -26,7 +26,7 @@ before relaxing the structure back to generate the final protein-ligand conforma
 
 ## Dependency
 
-Run the following command from the current directory to build dependency:
+Run the following command from the current directory to install the Python dependencies:
 
 ```
 conda create --name 3T python=3.7
