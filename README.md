@@ -34,10 +34,8 @@ conda activate 3T
 pip install -r requirements.txt
 ```
 
-If you don't have `wget` installed, install it using the instructions found here:
+If you don't have `wget` and `unzip` installed, install them using the instructions found here:
     https://linuxize.com/post/wget-command-examples/
-
-If you don't have `unzip` installed, install it using the instructions found here:
     https://linuxpip.org/install-zip-unzip/
 
 In addition, you need to have GROMACS installed.
