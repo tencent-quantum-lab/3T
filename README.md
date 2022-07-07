@@ -35,8 +35,10 @@ pip install -r requirements.txt
 ```
 
 If you don't have `wget` and `unzip` installed, install them using the instructions found here:
+```
     https://linuxize.com/post/wget-command-examples/
     https://linuxpip.org/install-zip-unzip/
+```
 
 In addition, you need to have GROMACS installed.
 This particular work was done using GROMACS 2021.3, which can be found here:
