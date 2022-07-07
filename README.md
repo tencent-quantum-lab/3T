@@ -18,6 +18,11 @@ it updates the local structure transformation parameters instead.
 
 3T is neither an ML nor an MD approach, but it does utilize many components found in both ML and MD.
 
+In order to generate multiple different conformations, we distort the initial structure with a random energetic kick,
+before relaxing the structure back to generate the final protein-ligand conformations, as shown in the figure below:
+
+    ![Alt text](2_structure_generation/Images/3T_Workflow.png?raw=true "Title")
+
 ## Dependency
 
 Run the following command from the current directory to build dependency:
