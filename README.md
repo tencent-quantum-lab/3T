@@ -5,7 +5,8 @@ This is a multi-scale structure optimization/generation algorithm, which relies 
 This task is traditionally difficult to do, and the conventional approach is to generate ligand docking poses on rigid protein pockets.
 Either that, or run a full-blown molecular dynamics (MD simulation) on the full protein-ligand complex pocket to generate the desired conformations (but this is not suitable for large scale ligand screening commonly used in computational drug discovery).
 
-On the other hand, 3T utilizes local transformations to hierarchically transform the initial structure, generating new structures in the process while easily escaping trivial local energy traps which is usually very difficult to escape without lengthy MD:
+On the other hand, 3T utilizes tensor-based local structure transformations to hierarchically transform the initial structure,
+generating new structures in the process while easily escaping trivial local energy traps which are usually very difficult to escape from without a long MD:
 
 ![Alt text](2_structure_generation/Images/3T_Model.png?raw=true "Title")
 
