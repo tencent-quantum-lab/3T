@@ -6,7 +6,8 @@ This task is traditionally difficult to do, and the conventional approach is to 
 Either that, or run a full-blown molecular dynamics (MD) simulation on the full protein-ligand complex pocket to generate the desired conformations (but this is not suitable for large scale ligand screening commonly used in computational drug discovery).
 
 On the other hand, 3T utilizes tensor-based local structure transformations to hierarchically transform the initial structure,
-generating new structures in the process while easily escaping trivial local energy traps which are usually very difficult to escape from without a long MD:
+generating new ligand-dependent protein-ligand complex pocket structures in the process while easily escaping trivial local energy traps
+which are usually very difficult to escape from without a long MD:
 
 ![Alt text](2_structure_generation/Images/3T_Model.png?raw=true "Title")
 
@@ -32,6 +33,9 @@ conda create --name 3T python=3.7
 conda activate 3T
 pip install -r requirements.txt
 ```
+
+If you don't have `wget` installed, install it using the instructions found here:
+    https://linuxize.com/post/wget-command-examples/
 
 In addition, you need to have GROMACS installed.
 This particular work was done using GROMACS 2021.3, which can be found here:
