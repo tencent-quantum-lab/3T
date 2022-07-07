@@ -62,7 +62,7 @@ def exec_job(job_args):
                 print_log(os.path.join(cwd,log_file), 'Exception : convert_complex '+os.path.join(pro,lig))
 
         # Then we minimize the standalone ligand
-        print('3T ligand relaxation within rigid protein pocket...')
+        print('3T standalone ligand relaxation...')
         os.chdir(cwd)
         try:
             main_minimize_ligand(pid, convert_folder, ligand_epoch, print_freq)
