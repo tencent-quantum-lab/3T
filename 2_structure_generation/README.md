@@ -16,7 +16,7 @@ Then simply run or modify the notebook interactively:
 jupyter notebook example_3T_workflow.ipynb
 ```
 
-Otherwise, you can also just run all the cells in the notebook as-is in your machine directly:
+Otherwise, you can also just run all the cells in the notebook as-is in your machine directly, and wait. It will take less than 1 hour on a GPU machine, and less than 10 hours on a single-core CPU machine:
 
 ```
 jupyter nbconvert --to=notebook --inplace --ExecutePreprocessor.enabled=True example_3T_workflow.ipynb
