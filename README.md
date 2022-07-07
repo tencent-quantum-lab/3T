@@ -40,7 +40,4 @@ This particular work was done using GROMACS 2021.3, which can be found here:
 Follow the GROMACS installation instructions here:
     https://manual.gromacs.org/2021.3/install-guide/index.html
 
-If you have done this correctly, the following command should show you the GROMACS executable we will use in `2_structure_generation/example_3T_workflow.ipynb`:
-```
-which gmx
-```
+If you have done this correctly, the command `which gmx` should show you the GROMACS executable we will use in `2_structure_generation/example_3T_workflow.ipynb`:
