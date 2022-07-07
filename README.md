@@ -38,12 +38,10 @@ If you don't have `wget` and `unzip` installed, install them using the instructi
 &ensp;https://linuxize.com/post/wget-command-examples/ <br />
 &ensp;https://linuxpip.org/install-zip-unzip/
 
-
 In addition, you need to have GROMACS installed.
-This particular work was done using GROMACS 2021.3, which can be found here:
-    https://manual.gromacs.org/documentation/2021.3/download.html
+This particular work was done using GROMACS 2021.3, download link and installation instructions here: <br />
+&ensp;https://manual.gromacs.org/documentation/2021.3/download.html <br />
+&ensp;https://manual.gromacs.org/2021.3/install-guide/index.html
 
-Follow the GROMACS installation instructions here:
-    https://manual.gromacs.org/2021.3/install-guide/index.html
-
-If you have done this correctly, the command `which gmx` should show you the GROMACS executable we will use in `2_structure_generation/example_3T_workflow.ipynb`:
+If you have done this correctly, the command `which gmx`, `which wget`, and `which unzip` should show you the corresponding executable locations.
+We will use these in the `2_structure_generation/example_3T_workflow.ipynb` notebook.
