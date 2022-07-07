@@ -39,7 +39,7 @@ If you don't have `wget` and `unzip` installed, install them using the instructi
 &ensp;https://linuxpip.org/install-zip-unzip/
 
 In addition, you need to have GROMACS installed.
-This particular work was done using GROMACS 2021.3, download link and installation instructions here: <br />
+This particular work was done using GROMACS 2021.3; download link and installation instructions are available here: <br />
 &ensp;https://manual.gromacs.org/documentation/2021.3/download.html <br />
 &ensp;https://manual.gromacs.org/2021.3/install-guide/index.html
 
