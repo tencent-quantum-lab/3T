@@ -1,0 +1,40 @@
+obabel -isdf CDK2/ligand_docked/cocry_1aq1_STU_LIG_docking.sdf -l 3 -O CDK2/ligand_docked/cocry_1aq1_STU_LIG_dock_1fin_.sdf -m
+obabel -isdf CDK2/ligand_docked/cocry_1b38_ATP_LIG_docking.sdf -l 3 -O CDK2/ligand_docked/cocry_1b38_ATP_LIG_dock_1fin_.sdf -m
+obabel -isdf CDK2/ligand_docked/cocry_1b39_ATP_LIG_docking.sdf -l 3 -O CDK2/ligand_docked/cocry_1b39_ATP_LIG_dock_1fin_.sdf -m
+obabel -isdf CDK2/ligand_docked/cocry_1ckp_PVB_LIG_docking.sdf -l 3 -O CDK2/ligand_docked/cocry_1ckp_PVB_LIG_dock_1fin_.sdf -m
+obabel -isdf CDK2/ligand_docked/cocry_1di8_DTQ_LIG_docking.sdf -l 3 -O CDK2/ligand_docked/cocry_1di8_DTQ_LIG_dock_1fin_.sdf -m
+obabel -isdf CDK2/ligand_docked/cocry_1dm2_HMD_LIG_docking.sdf -l 3 -O CDK2/ligand_docked/cocry_1dm2_HMD_LIG_dock_1fin_.sdf -m
+obabel -isdf CDK2/ligand_docked/cocry_1e1v_CMG_LIG_docking.sdf -l 3 -O CDK2/ligand_docked/cocry_1e1v_CMG_LIG_dock_1fin_.sdf -m
+obabel -isdf CDK2/ligand_docked/cocry_1e1x_NW1_LIG_docking.sdf -l 3 -O CDK2/ligand_docked/cocry_1e1x_NW1_LIG_dock_1fin_.sdf -m
+obabel -isdf CDK2/ligand_docked/cocry_1e9h_INR_LIG_docking.sdf -l 3 -O CDK2/ligand_docked/cocry_1e9h_INR_LIG_dock_1fin_.sdf -m
+obabel -isdf CDK2/ligand_docked/cocry_1fin_ATP_LIG_docking.sdf -l 3 -O CDK2/ligand_docked/cocry_1fin_ATP_LIG_dock_1fin_.sdf -m
+obabel -isdf CDK2/ligand_docked/csar_decoy_1_docking.sdf -l 1 -O CDK2/ligand_docked/csar_decoy_1_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/csar_decoy_2_docking.sdf -l 1 -O CDK2/ligand_docked/csar_decoy_2_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/csar_decoy_3_docking.sdf -l 1 -O CDK2/ligand_docked/csar_decoy_3_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/csar_decoy_4_docking.sdf -l 1 -O CDK2/ligand_docked/csar_decoy_4_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/csar_decoy_5_docking.sdf -l 1 -O CDK2/ligand_docked/csar_decoy_5_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/csar_ligand_1_docking.sdf -l 1 -O CDK2/ligand_docked/csar_ligand_1_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/csar_ligand_2_docking.sdf -l 1 -O CDK2/ligand_docked/csar_ligand_2_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/csar_ligand_3_docking.sdf -l 1 -O CDK2/ligand_docked/csar_ligand_3_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/csar_ligand_4_docking.sdf -l 1 -O CDK2/ligand_docked/csar_ligand_4_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/csar_ligand_5_docking.sdf -l 1 -O CDK2/ligand_docked/csar_ligand_5_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dekois2_decoy_1_docking.sdf -l 1 -O CDK2/ligand_docked/dekois2_decoy_1_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dekois2_decoy_2_docking.sdf -l 1 -O CDK2/ligand_docked/dekois2_decoy_2_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dekois2_decoy_3_docking.sdf -l 1 -O CDK2/ligand_docked/dekois2_decoy_3_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dekois2_decoy_4_docking.sdf -l 1 -O CDK2/ligand_docked/dekois2_decoy_4_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dekois2_decoy_5_docking.sdf -l 1 -O CDK2/ligand_docked/dekois2_decoy_5_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dekois2_ligand_1_docking.sdf -l 1 -O CDK2/ligand_docked/dekois2_ligand_1_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dekois2_ligand_2_docking.sdf -l 1 -O CDK2/ligand_docked/dekois2_ligand_2_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dekois2_ligand_3_docking.sdf -l 1 -O CDK2/ligand_docked/dekois2_ligand_3_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dekois2_ligand_4_docking.sdf -l 1 -O CDK2/ligand_docked/dekois2_ligand_4_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dekois2_ligand_5_docking.sdf -l 1 -O CDK2/ligand_docked/dekois2_ligand_5_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dude_decoy_1_docking.sdf -l 1 -O CDK2/ligand_docked/dude_decoy_1_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dude_decoy_2_docking.sdf -l 1 -O CDK2/ligand_docked/dude_decoy_2_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dude_decoy_3_docking.sdf -l 1 -O CDK2/ligand_docked/dude_decoy_3_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dude_decoy_4_docking.sdf -l 1 -O CDK2/ligand_docked/dude_decoy_4_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dude_decoy_5_docking.sdf -l 1 -O CDK2/ligand_docked/dude_decoy_5_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dude_ligand_1_docking.sdf -l 1 -O CDK2/ligand_docked/dude_ligand_1_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dude_ligand_2_docking.sdf -l 1 -O CDK2/ligand_docked/dude_ligand_2_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dude_ligand_3_docking.sdf -l 1 -O CDK2/ligand_docked/dude_ligand_3_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dude_ligand_4_docking.sdf -l 1 -O CDK2/ligand_docked/dude_ligand_4_dock_1fin_1.sdf
+obabel -isdf CDK2/ligand_docked/dude_ligand_5_docking.sdf -l 1 -O CDK2/ligand_docked/dude_ligand_5_dock_1fin_1.sdf

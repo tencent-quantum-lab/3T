@@ -1,0 +1,30 @@
+obabel -isdf HSP90/ligand_docked/cocry_1osf_KOS_LIG_docking.sdf -l 3 -O HSP90/ligand_docked/cocry_1osf_KOS_LIG_dock_1uyg_.sdf -m
+obabel -isdf HSP90/ligand_docked/cocry_1uy6_PU3_LIG_docking.sdf -l 3 -O HSP90/ligand_docked/cocry_1uy6_PU3_LIG_dock_1uyg_.sdf -m
+obabel -isdf HSP90/ligand_docked/cocry_1uy7_PU4_LIG_docking.sdf -l 3 -O HSP90/ligand_docked/cocry_1uy7_PU4_LIG_dock_1uyg_.sdf -m
+obabel -isdf HSP90/ligand_docked/cocry_1uy8_PU5_LIG_docking.sdf -l 3 -O HSP90/ligand_docked/cocry_1uy8_PU5_LIG_dock_1uyg_.sdf -m
+obabel -isdf HSP90/ligand_docked/cocry_1uy9_PU6_LIG_docking.sdf -l 3 -O HSP90/ligand_docked/cocry_1uy9_PU6_LIG_dock_1uyg_.sdf -m
+obabel -isdf HSP90/ligand_docked/cocry_1uyc_PU7_LIG_docking.sdf -l 3 -O HSP90/ligand_docked/cocry_1uyc_PU7_LIG_dock_1uyg_.sdf -m
+obabel -isdf HSP90/ligand_docked/cocry_1uyd_PU8_LIG_docking.sdf -l 3 -O HSP90/ligand_docked/cocry_1uyd_PU8_LIG_dock_1uyg_.sdf -m
+obabel -isdf HSP90/ligand_docked/cocry_1uye_PU9_LIG_docking.sdf -l 3 -O HSP90/ligand_docked/cocry_1uye_PU9_LIG_dock_1uyg_.sdf -m
+obabel -isdf HSP90/ligand_docked/cocry_1uyf_PU1_LIG_docking.sdf -l 3 -O HSP90/ligand_docked/cocry_1uyf_PU1_LIG_dock_1uyg_.sdf -m
+obabel -isdf HSP90/ligand_docked/cocry_1uyg_PU2_LIG_docking.sdf -l 3 -O HSP90/ligand_docked/cocry_1uyg_PU2_LIG_dock_1uyg_.sdf -m
+obabel -isdf HSP90/ligand_docked/dekois2_decoy_11_docking.sdf -l 1 -O HSP90/ligand_docked/dekois2_decoy_11_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dekois2_decoy_12_docking.sdf -l 1 -O HSP90/ligand_docked/dekois2_decoy_12_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dekois2_decoy_13_docking.sdf -l 1 -O HSP90/ligand_docked/dekois2_decoy_13_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dekois2_decoy_14_docking.sdf -l 1 -O HSP90/ligand_docked/dekois2_decoy_14_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dekois2_decoy_15_docking.sdf -l 1 -O HSP90/ligand_docked/dekois2_decoy_15_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dekois2_ligand_11_docking.sdf -l 1 -O HSP90/ligand_docked/dekois2_ligand_11_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dekois2_ligand_12_docking.sdf -l 1 -O HSP90/ligand_docked/dekois2_ligand_12_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dekois2_ligand_13_docking.sdf -l 1 -O HSP90/ligand_docked/dekois2_ligand_13_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dekois2_ligand_14_docking.sdf -l 1 -O HSP90/ligand_docked/dekois2_ligand_14_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dekois2_ligand_15_docking.sdf -l 1 -O HSP90/ligand_docked/dekois2_ligand_15_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dude_decoy_11_docking.sdf -l 1 -O HSP90/ligand_docked/dude_decoy_11_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dude_decoy_12_docking.sdf -l 1 -O HSP90/ligand_docked/dude_decoy_12_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dude_decoy_13_docking.sdf -l 1 -O HSP90/ligand_docked/dude_decoy_13_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dude_decoy_14_docking.sdf -l 1 -O HSP90/ligand_docked/dude_decoy_14_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dude_decoy_15_docking.sdf -l 1 -O HSP90/ligand_docked/dude_decoy_15_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dude_ligand_11_docking.sdf -l 1 -O HSP90/ligand_docked/dude_ligand_11_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dude_ligand_12_docking.sdf -l 1 -O HSP90/ligand_docked/dude_ligand_12_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dude_ligand_13_docking.sdf -l 1 -O HSP90/ligand_docked/dude_ligand_13_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dude_ligand_14_docking.sdf -l 1 -O HSP90/ligand_docked/dude_ligand_14_dock_1uyg_1.sdf
+obabel -isdf HSP90/ligand_docked/dude_ligand_15_docking.sdf -l 1 -O HSP90/ligand_docked/dude_ligand_15_dock_1uyg_1.sdf

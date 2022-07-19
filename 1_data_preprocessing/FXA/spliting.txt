@@ -1,0 +1,30 @@
+obabel -isdf FXA/ligand_docked/cocry_1ezq_RPR_LIG_docking.sdf -l 3 -O FXA/ligand_docked/cocry_1ezq_RPR_LIG_dock_1ezq_.sdf -m
+obabel -isdf FXA/ligand_docked/cocry_1f0r_815_LIG_docking.sdf -l 3 -O FXA/ligand_docked/cocry_1f0r_815_LIG_dock_1ezq_.sdf -m
+obabel -isdf FXA/ligand_docked/cocry_1f0s_PR2_LIG_docking.sdf -l 3 -O FXA/ligand_docked/cocry_1f0s_PR2_LIG_dock_1ezq_.sdf -m
+obabel -isdf FXA/ligand_docked/cocry_1fax_DX9_LIG_docking.sdf -l 3 -O FXA/ligand_docked/cocry_1fax_DX9_LIG_dock_1ezq_.sdf -m
+obabel -isdf FXA/ligand_docked/cocry_1fjs_Z34_LIG_docking.sdf -l 3 -O FXA/ligand_docked/cocry_1fjs_Z34_LIG_dock_1ezq_.sdf -m
+obabel -isdf FXA/ligand_docked/cocry_1g2l_T87_LIG_docking.sdf -l 3 -O FXA/ligand_docked/cocry_1g2l_T87_LIG_dock_1ezq_.sdf -m
+obabel -isdf FXA/ligand_docked/cocry_1g2m_R11_LIG_docking.sdf -l 3 -O FXA/ligand_docked/cocry_1g2m_R11_LIG_dock_1ezq_.sdf -m
+obabel -isdf FXA/ligand_docked/cocry_1ioe_XMA_LIG_docking.sdf -l 3 -O FXA/ligand_docked/cocry_1ioe_XMA_LIG_dock_1ezq_.sdf -m
+obabel -isdf FXA/ligand_docked/cocry_1iqe_XMB_LIG_docking.sdf -l 3 -O FXA/ligand_docked/cocry_1iqe_XMB_LIG_dock_1ezq_.sdf -m
+obabel -isdf FXA/ligand_docked/cocry_1iqf_XMD_LIG_docking.sdf -l 3 -O FXA/ligand_docked/cocry_1iqf_XMD_LIG_dock_1ezq_.sdf -m
+obabel -isdf FXA/ligand_docked/dekois2_decoy_1_docking.sdf -l 1 -O FXA/ligand_docked/dekois2_decoy_1_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dekois2_decoy_2_docking.sdf -l 1 -O FXA/ligand_docked/dekois2_decoy_2_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dekois2_decoy_3_docking.sdf -l 1 -O FXA/ligand_docked/dekois2_decoy_3_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dekois2_decoy_4_docking.sdf -l 1 -O FXA/ligand_docked/dekois2_decoy_4_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dekois2_decoy_5_docking.sdf -l 1 -O FXA/ligand_docked/dekois2_decoy_5_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dekois2_ligand_1_docking.sdf -l 1 -O FXA/ligand_docked/dekois2_ligand_1_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dekois2_ligand_2_docking.sdf -l 1 -O FXA/ligand_docked/dekois2_ligand_2_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dekois2_ligand_3_docking.sdf -l 1 -O FXA/ligand_docked/dekois2_ligand_3_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dekois2_ligand_4_docking.sdf -l 1 -O FXA/ligand_docked/dekois2_ligand_4_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dekois2_ligand_5_docking.sdf -l 1 -O FXA/ligand_docked/dekois2_ligand_5_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dude_decoy_1_docking.sdf -l 1 -O FXA/ligand_docked/dude_decoy_1_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dude_decoy_2_docking.sdf -l 1 -O FXA/ligand_docked/dude_decoy_2_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dude_decoy_3_docking.sdf -l 1 -O FXA/ligand_docked/dude_decoy_3_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dude_decoy_4_docking.sdf -l 1 -O FXA/ligand_docked/dude_decoy_4_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dude_decoy_5_docking.sdf -l 1 -O FXA/ligand_docked/dude_decoy_5_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dude_ligand_1_docking.sdf -l 1 -O FXA/ligand_docked/dude_ligand_1_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dude_ligand_2_docking.sdf -l 1 -O FXA/ligand_docked/dude_ligand_2_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dude_ligand_3_docking.sdf -l 1 -O FXA/ligand_docked/dude_ligand_3_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dude_ligand_4_docking.sdf -l 1 -O FXA/ligand_docked/dude_ligand_4_dock_1ezq_1.sdf
+obabel -isdf FXA/ligand_docked/dude_ligand_5_docking.sdf -l 1 -O FXA/ligand_docked/dude_ligand_5_dock_1ezq_1.sdf
