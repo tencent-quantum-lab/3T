@@ -26,18 +26,18 @@ def extract_RMSD_pairs(pro_code):
     n_top = 3
     tag = os.path.join('Input_Data',pro_code)
     all_RMSD = load_tsv(tag+'_RMSD_features.tsv')
-    all_vina = load_tsv(tag+'_vina_features.tsv')
+    all_smina = load_tsv(tag+'_smina_features.tsv')
     # Indices on rows are not ordered. But they are ordered on columns.
     RMSD_data = rearrange_array(all_RMSD.to_numpy())
-    vina_data = rearrange_array(all_vina.to_numpy())
+    smina_data = rearrange_array(all_smina.to_numpy())
     for i in range(RMSD_data.shape[0]):
-        assert RMSD_data[i,0] == vina_data[i,0]
+        assert RMSD_data[i,0] == smina_data[i,0]
     RMSD_data = RMSD_data[:,1:]
-    vina_data = vina_data[:,1:]
+    smina_data = smina_data[:,1:]
     RMSD_data = RMSD_data.reshape([3,-1,RMSD_data.shape[-1]])
-    vina_data = vina_data.reshape([3,-1,vina_data.shape[-1]])
-    vina_idx = np.argsort(vina_data[:,2:,:], axis=1) + 2
-    RMSD_3Ttop3 = np.take_along_axis(RMSD_data, vina_idx[:,:n_top,:], axis=1)
+    smina_data = smina_data.reshape([3,-1,smina_data.shape[-1]])
+    smina_idx = np.argsort(smina_data[:,2:,:], axis=1) + 2
+    RMSD_3Ttop3 = np.take_along_axis(RMSD_data, smina_idx[:,:n_top,:], axis=1)
     RMSD_3Tbest = np.min(RMSD_3Ttop3, axis=1)
     RMSD_ref = RMSD_data[:,0,:]
     return RMSD_3Tbest, RMSD_ref
