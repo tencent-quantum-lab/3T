@@ -38,10 +38,6 @@ If you don't have `wget` and `unzip` installed, install them using the instructi
 &ensp;https://linuxize.com/post/wget-command-examples/ <br />
 &ensp;https://linuxpip.org/install-zip-unzip/
 
-## Contact
-
-Questions about this repository may be addressed to Jonathan Mailoa ( jpmailoa [AT] alum [DOT] mit [DOT] edu ).
-
 In addition, you need to have GROMACS installed.
 This particular work was done using GROMACS 2021.3 (other versions may work as well, but have not been tested). Download link and installation instructions are available here: <br />
 &ensp;https://manual.gromacs.org/documentation/2021.3/download.html <br />
@@ -49,3 +45,7 @@ This particular work was done using GROMACS 2021.3 (other versions may work as w
 
 If you have performed these instructions correctly, the command `which gmx`, `which wget`, and `which unzip` should show you the corresponding executable locations.
 We will use these in the `2_structure_generation/example_3T_workflow.ipynb` notebook.
+
+## Contact
+
+Questions about this repository may be addressed to Jonathan Mailoa ( jpmailoa [AT] alum [DOT] mit [DOT] edu ).
