@@ -8,3 +8,9 @@ psutil
 ase
 matplotlib
 jupyter
+pymol
+rdkit
+spyrmsd
+smina
+openbabel
+xgboost
