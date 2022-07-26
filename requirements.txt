@@ -5,6 +5,8 @@ pytorch
 bs4
 mechanize
 psutil
+wget
+unzip
 ase
 matplotlib
 jupyter
