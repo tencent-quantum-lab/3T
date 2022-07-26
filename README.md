@@ -31,7 +31,7 @@ Run the following command from the current directory to install the Python depen
 ```
 conda create --name 3T python=3.7
 conda activate 3T
-conda install --file requirements.txt -c pytorch -c conda-forge -c rdkit -c schrodinger pymol-bundle -c openbabel
+conda install --file requirements.txt -c pytorch -c conda-forge -c rdkit -c openbabel
 ```
 
 If you don't have `wget` and `unzip` installed, install them using the instructions found here: <br />
