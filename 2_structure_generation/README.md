@@ -3,10 +3,10 @@
 Make sure you have GROMACS (`gmx`), `wget`, and `unzip` installed. The notebook will first check that they are properly installed before it can run.
 If you have performed these instructions correctly, the command `which gmx`, `which wget`, and `which unzip` should show you the corresponding executable locations.
 If they're not installed correctly, you can do the installation using these instructions: <br />
-&ensp;https://linuxize.com/post/wget-command-examples/ <br />
-&ensp;https://linuxpip.org/install-zip-unzip/ <br />
 &ensp;https://manual.gromacs.org/documentation/2021.3/download.html <br />
-&ensp;https://manual.gromacs.org/2021.3/install-guide/index.html
+&ensp;https://manual.gromacs.org/2021.3/install-guide/index.html <br />
+&ensp;https://linuxize.com/post/wget-command-examples/ <br />
+&ensp;https://linuxpip.org/install-zip-unzip/
 
 ## Evaluation
 
