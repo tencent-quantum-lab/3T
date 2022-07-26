@@ -26,7 +26,7 @@ before relaxing the structure back to generate the final protein-ligand conforma
 
 ## Dependency
 
-Run the following command from the current directory to install the Python dependencies:
+Run the following command from the current directory to install most of the dependencies:
 
 ```
 conda create --name 3T python=3.7
@@ -38,7 +38,7 @@ In addition, you need to have GROMACS installed.
 This particular work was done using GROMACS 2021.3 (other versions may work as well, but have not been tested). Download link and installation instructions are available here: <br />
 &ensp;https://manual.gromacs.org/documentation/2021.3/download.html <br />
 &ensp;https://manual.gromacs.org/2021.3/install-guide/index.html
-
+Or if you'd like, you can try the convenient option `conda install -c bioconda gromacs` for this installation.
 
 ## Contact
 
