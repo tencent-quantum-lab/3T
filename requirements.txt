@@ -1,6 +1,7 @@
 numpy
 parmed
 six
+cudatoolkit
 pytorch
 bs4
 mechanize
