@@ -35,7 +35,7 @@ conda install --file requirements.txt -c pytorch -c conda-forge -c rdkit -c open
 ```
 
 In addition, you need to have GROMACS installed.
-This particular work was done using GROMACS 2021.3 (<b><u><i>other versions may work as well, but have not been tested</i></u></b>). Download link and installation instructions are available here: <br />
+This particular work was done using GROMACS 2021.3 (<b><ins><i>other versions may work as well, but have not been tested</i></ins></b>). Download link and installation instructions are available here: <br />
 &ensp;https://manual.gromacs.org/documentation/2021.3/download.html <br />
 &ensp;https://manual.gromacs.org/2021.3/install-guide/index.html
 
