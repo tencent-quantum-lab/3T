@@ -39,8 +39,6 @@ This particular work was done using GROMACS 2021.3 (other versions may work as w
 &ensp;https://manual.gromacs.org/documentation/2021.3/download.html <br />
 &ensp;https://manual.gromacs.org/2021.3/install-guide/index.html
 
-If you have performed these instructions correctly, the command `which gmx`, `which wget`, and `which unzip` should show you the corresponding executable locations.
-We will use these in the `2_structure_generation/02_generation_workflow.ipynb` notebook.
 
 ## Contact
 
