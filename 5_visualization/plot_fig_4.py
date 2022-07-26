@@ -83,7 +83,7 @@ def create_violinplot(fig_num, data, ylabel, xlabels, yrange):
 
     return
 
-def plot_fig_4_code(tag):
+def plot_fig4_code(tag):
     in_tag = os.path.join('Input_Data',tag)
     nef, roc = extract_ML_prop(in_tag + '_Ricci_ML.csv')
     nef3T, roc3T = extract_ML_prop(in_tag + '_scrambled_3T_ML.csv')
@@ -156,14 +156,3 @@ def plot_fig_4_code(tag):
         plt.figure(1)
         plt.savefig(out_tag+'Fig_S3f.svg', format='svg', dpi=1200, transparent=True)
     return
-
-plot_fig_4_code('CDK2_25A')
-plt.show()
-plot_fig_4_code('HSP90')
-plt.show()
-plot_fig_4_code('CDK2')
-plt.show()
-plot_fig_4_code('FXA')
-plt.show()
-plot_fig_4_code('HSP90_rigid')
-plt.show()

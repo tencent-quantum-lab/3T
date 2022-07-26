@@ -1,3 +1,3 @@
 ## Plot Generation
 
-Simply run `python plot_fig_3.py` and `python plot_fig_4.py` in your terminal to generate the images from the pre-computed full dataset.
+Simply run the notebook `05_visualization.ipynb` to generate the images from the pre-computed full dataset.

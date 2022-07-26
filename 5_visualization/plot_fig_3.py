@@ -166,15 +166,3 @@ def plot_fig3_code(pro):
         plt.figure(1)
         plt.savefig(tag+'Fig_S2h.svg', format='svg', dpi=1200, transparent=True)
     return
-
-plot_fig3_code('CDK2')
-plt.show()
-plot_fig3_code('CDK2_25A')
-plt.show()
-plot_fig3_code('HSP90')
-plt.show()
-plot_fig3_code('HSP90_rigid')
-plt.show()
-plot_fig3_code('FXA')
-plt.show()
-

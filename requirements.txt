@@ -1,14 +1,14 @@
 numpy
 parmed
 six
-torch
+pytorch
 bs4
 mechanize
 psutil
 ase
 matplotlib
 jupyter
-pymol
+pymol-open-source
 rdkit
 spyrmsd
 smina
