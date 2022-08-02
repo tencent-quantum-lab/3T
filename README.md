@@ -50,7 +50,7 @@ Questions about this repository may be addressed to Jonathan Mailoa ( jpmailoa [
 
 
 ```
-from ConGen import CogGen
+from ConGen import ConGen
 
 model = ConGen()
 model.add_database( 'user_database.csv' )
