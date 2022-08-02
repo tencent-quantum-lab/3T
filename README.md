@@ -47,3 +47,18 @@ A separate library crucial for the 3T structure generation (a custom version of 
 ## Contact
 
 Questions about this repository may be addressed to Jonathan Mailoa ( jpmailoa [AT] alum [DOT] mit [DOT] edu ).
+
+
+```
+from ConGen import CogGen
+
+model = ConGen()
+model.add_database( 'user_database.csv' )
+
+prop_to_train = ['n_F', 'n_heavy', 'IE', 'EA', 'viscosity', 'dielectric']
+model.assign_prop( prop_to_train )
+model.train_routine()
+
+con_gen_prop = ['n_F > 3', 'n_heavy < 15', 'IE > 6.5', 'EA > 3.0']
+output_molecules = model.generate_routine( con_gen_prop, n_gen=1000 )
+```
