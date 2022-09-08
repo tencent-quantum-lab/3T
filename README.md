@@ -26,7 +26,7 @@ before relaxing the structure back to generate the final protein-ligand conforma
 
 ## Dependency
 
-Run the following command from the current directory to install most of the dependencies:
+The code was tested on Linux operating system. Run the following command from the current directory to install most of the dependencies:
 
 ```
 conda create --name 3T python=3.7
