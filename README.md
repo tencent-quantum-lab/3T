@@ -39,7 +39,7 @@ This particular work was done using GROMACS 2021.3 (<b><ins><i>other versions ma
 &ensp;https://manual.gromacs.org/documentation/2021.3/download.html <br />
 &ensp;https://manual.gromacs.org/2021.3/install-guide/index.html
 
-Or if you'd like, you can try this convenient installation option (not recommended): <br />
+Or if you'd like, you can try this convenient installation option (<b>not recommended</b>): <br />
 `conda install -c bioconda gromacs`
 
 A separate library crucial for the 3T structure generation (a custom version of the [InterMol](https://github.com/shirtsgroup/InterMol) library) will be automatically installed when running the `2_structure_generation/02_generation_workflow.ipynb` notebook.
