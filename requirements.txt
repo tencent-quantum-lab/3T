@@ -17,3 +17,4 @@ spyrmsd>=0.5.2
 smina>=2020.12.10
 openbabel>=3.1.1
 xgboost>=1.5.1
+seaborn>=0.12.0

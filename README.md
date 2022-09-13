@@ -34,6 +34,8 @@ conda activate 3T
 conda install --file requirements.txt -c pytorch -c conda-forge -c rdkit -c openbabel -c anaconda
 ```
 
+The conda library versions in `requirements.txt` are provided as reference only. If your conda has difficulty in resolving the dependencies simultaneously, you can either install them one by one or simply remove the suggested library version constraints from `requirements.txt`.
+
 In addition, you need to have GROMACS installed.
 This particular work was done using GROMACS 2021.3 (<b><ins><i>other versions may work as well, but have not been tested</i></ins></b>). Download link and installation instructions are available here: <br />
 &ensp;https://manual.gromacs.org/documentation/2021.3/download.html <br />
