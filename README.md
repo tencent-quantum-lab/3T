@@ -15,7 +15,7 @@ As can be seen from the figure above, 3T does not require training data. The str
 while the structure evaluation cost function (top) is just a differentiable classical force field function.
 Because of this, no machine learning (ML) training data is necessary for 3T structure generation.
 Running backward propagation on this 3T model does not directly update the structure;
-it updates the local structure transformation parameters instead.
+it updates the local structure translation and rotation transformation parameters instead.
 
 3T is neither an ML nor an MD approach, but it does utilize many components found in both ML and MD.
 
