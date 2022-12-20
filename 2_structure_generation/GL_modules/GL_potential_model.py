@@ -121,24 +121,10 @@ class PotentialModel(nn.Module):
         self.atom_pos = self.arrange_atom_pos(self.movable_pos_list, self.fixed_pos)
         return
 
-##    def arrange_atom_pos(self, movable_pos_list, fixed_pos):
-##        na = sum([movable_pos.shape[0] for movable_pos in movable_pos_list]) + fixed_pos.shape[0]
-##        atom_pos = torch.zeros(na,3).to(self.device)
-##        for i in range(len(movable_pos_list)):
-##            atom_pos[self.movable_idx_list[i],:] = movable_pos_list[i]
-##        atom_pos[self.fixed_idx,:] = fixed_pos
-##
-##        # Implement special anchor-based rotation
-##        if self.special_rotation_idx != None:
-##            atom_pos = self.anchor_rotate(atom_pos)
-##            
-##        return atom_pos
-
     def arrange_atom_pos(self, movable_pos_list, fixed_pos):
         if self.special_rotation_idx != None:
             movable_pos_list = self.axis_rotate(movable_pos_list, fixed_pos)
 
-        #movable_pos_list = self.translate(self.rotate(movable_pos_list))
         movable_pos_list = self.micro_rotate_translate(movable_pos_list)
 
         if self.macro_mode_idx != None:
@@ -160,7 +146,6 @@ class PotentialModel(nn.Module):
         in_xyz = torch.cat([in_xyz_list[i] for i in range(nm)], dim=0)
         com_xyz = torch.cat([in_xyz_list[i].mean(dim=0).expand(ng[i],3) for i in range(nm)], dim=0)
         trans_xyz = torch.cat([self.translation_list[i,:,:].expand(ng[i],3) for i in range(nm)], dim=0)
-        #rot_angles = torch.cat([self.rotation_list[i,:].expand(ng[i],3) for i in range(nm)], dim=0)
         rot_angles = torch.repeat_interleave(self.rotation_list, ng, dim=0)
         a, b, c = rot_angles[:,0], rot_angles[:,1], rot_angles[:,2]
         sin_a, cos_a = torch.sin(a), torch.cos(a)
@@ -209,8 +194,6 @@ class PotentialModel(nn.Module):
             macro_movable_idx = torch.cat([ torch.arange(indices[j],indices[j+1]) for j in self.macro_mode_idx[i] ])
             trans_xyz[macro_movable_idx,:] = self.macro_mode_translation_list[i]
             rot_angles[macro_movable_idx,:] = self.macro_mode_rotation_list[i]
-##            # Now we need to replace com_xyz of the macro groups with the macro centers
-##            com_xyz[macro_movable_idx,:] = in_xyz[macro_movable_idx,:].mean(dim=0)
 
         a, b, c = rot_angles[:,0], rot_angles[:,1], rot_angles[:,2]
         sin_a, cos_a = torch.sin(a), torch.cos(a)
@@ -239,8 +222,6 @@ class PotentialModel(nn.Module):
         rot_xyz = torch.matmul(frame_xyz.unsqueeze(1), R.transpose(1,2)).view(na,3)
         out_xyz = rot_xyz + com_xyz + trans_xyz
 
-##        out_xyz = in_xyz + trans_xyz
-        
         out_xyz_list = [out_xyz[ indices[i]:indices[i+1], :] for i in range(nm)]
 
         return out_xyz_list
@@ -249,39 +230,12 @@ class PotentialModel(nn.Module):
         return [in_xyz_list[i] + self.translation_list[i] for i in range(len(in_xyz_list))]
 
     def rotate(self, in_xyz_list):
-##        nm = len(in_xyz_list)
-##        com_list = [in_xyz_list[i].mean(dim=0) for i in range(nm)]
-##        com_xyz_list = [in_xyz_list[i] - com_list[i] for i in range(nm)]
-##        a,b,c = self.rotation_list[:,0], self.rotation_list[:,1], self.rotation_list[:,2]
-##        Ra = torch.Tensor([[0,0,0],[0,0,0],[0,0,1]]).repeat(nm,1,1).to(self.device)
-##        Rb = torch.Tensor([[0,0,0],[0,1,0],[0,0,0]]).repeat(nm,1,1).to(self.device)
-##        Rc = torch.Tensor([[1,0,0],[0,0,0],[0,0,0]]).repeat(nm,1,1).to(self.device)
-##        Ra[:,0,0] = torch.cos(a)
-##        Ra[:,0,1] = -torch.sin(a)
-##        Ra[:,1,0] = torch.sin(a)
-##        Ra[:,1,1] = torch.cos(a)
-##        
-##        Rb[:,0,0] = torch.cos(b)
-##        Rb[:,0,2] = torch.sin(b)
-##        Rb[:,2,0] = -torch.sin(b)
-##        Rb[:,2,2] = torch.cos(b)
-##        
-##        Rc[:,1,1] = torch.cos(c)
-##        Rc[:,1,2] = -torch.sin(c)
-##        Rc[:,2,1] = torch.sin(c)
-##        Rc[:,2,2] = torch.cos(c)
-##        
-##        R_list = [torch.matmul( Ra[i], torch.matmul(Rb[i], Rc[i]) ) for i in range(nm)]
-##        rot_xyz_list = [torch.matmul(com_xyz_list[i], R_list[i].transpose(0,1)) for i in range(nm)]
-##        out_xyz_list = [rot_xyz_list[i] + com_list[i] for i in range(nm)]
-
         zero = torch.LongTensor([0]).to(self.device)
         nm = len(in_xyz_list)
         ng = torch.LongTensor([len(i) for i in in_xyz_list]).to(self.device)
         na = torch.sum(ng)
         in_xyz = torch.cat([in_xyz_list[i] for i in range(nm)], dim=0)
         com_xyz = torch.cat([in_xyz_list[i].mean(dim=0).expand(ng[i],3) for i in range(nm)], dim=0)
-        #rot_angles = torch.cat([self.rotation_list[i,:].expand(ng[i],3) for i in range(nm)], dim=0)
         rot_angles = torch.repeat_interleave(self.rotation_list, ng, dim=0)
         a, b, c = rot_angles[:,0], rot_angles[:,1], rot_angles[:,2]
         sin_a, cos_a = torch.sin(a), torch.cos(a)
@@ -353,26 +307,9 @@ class PotentialModel(nn.Module):
         zero = torch.LongTensor([0]).to(self.device)
 
         rot_xyz_list = [movable_pos for movable_pos in movable_pos_list]
-##        for i, (gi, ai, bi) in enumerate(self.special_rotation_idx):
-##            C = atom_pos[self.movable_idx_list[gi],:]
-##            A = atom_pos[[ai],:]
-##            B = atom_pos[[bi],:]
-##            U = B-A
-##            R = C-A
-##            u = U/torch.linalg.norm(U,axis=1).view(-1,1)
-##            Z = (R*u).sum(axis=1).view(-1,1)*u
-##            x = R-Z
-##            y = torch.cross(u.expand(R.shape[0],3), x, dim=1)
-##            theta = self.special_rotation_list[i,0]
-##            rot_pos = A + Z + x*torch.cos(theta) + y*torch.sin(theta)
-##            # Replace special rotation group positions with this new one
-##            rot_xyz_list[gi] = rot_pos
 
         ns = torch.LongTensor([self.movable_idx_list[gi].shape[0] for gi in self.special_rotation_idx[:,0]]).to(self.device)
         C = torch.cat([atom_pos[self.movable_idx_list[gi],:] for gi in self.special_rotation_idx[:,0]], dim=0)
-        #A = torch.cat([atom_pos[[ self.special_rotation_idx[i,1] ],:].expand(ns[i],3) for i in range(len(ns))], dim=0)
-        #B = torch.cat([atom_pos[[ self.special_rotation_idx[i,2] ],:].expand(ns[i],3) for i in range(len(ns))], dim=0)
-        #theta = torch.cat([ self.special_rotation_list[i,0].expand(ns[i],3) for i in range(len(ns))], dim=0)
         A = torch.repeat_interleave(atom_pos[self.special_rotation_idx[:,1],:], ns, dim=0)
         B = torch.repeat_interleave(atom_pos[self.special_rotation_idx[:,2],:], ns, dim=0)
         theta = torch.repeat_interleave(self.special_rotation_list[:,[0]], ns, dim=0).expand(torch.sum(ns),3)
