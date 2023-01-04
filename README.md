@@ -1,6 +1,6 @@
 ## Tiered Tensor Transform
 
-This repository demonstrates the workflow and algorithm of Tencent Quantum Lab's Tiered Tensor Transform (3T).
+This repository demonstrates the workflow and algorithm of Tencent Quantum Lab's Tiered Tensor Transform (3T). The corresponding manuscript describing this work is posted on arXiv: https://arxiv.org/abs/2301.00984.
 This is a multi-scale structure optimization/generation algorithm, which relies on one initial structure example to generate multiple conformations of protein-ligand complex pockets.
 This task is traditionally difficult to do, and the conventional approach is to generate ligand docking poses on rigid protein pockets.
 Either that, or run a full-blown molecular dynamics (MD) simulation on the full protein-ligand complex pocket to generate the desired conformations (but this is not suitable for large scale ligand screening commonly used in computational drug discovery).
