@@ -1,0 +1,50 @@
+CRYST1   40.580   75.900  174.180  90.00  90.00  90.00 P 21 21 21    4
+HETATM    1  C1  JSZ A1203      -2.068  -0.030 -53.457  1.00 55.43      D    C  
+HETATM    2  N1  JSZ A1203      -2.631   7.948 -51.972  1.00 52.98      D    N  
+HETATM    3  O1  JSZ A1203      -1.286  -0.892 -53.820  1.00 59.98      D    O  
+HETATM    4  C2  JSZ A1203      -3.357  -0.126 -55.633  1.00 63.67      D    C  
+HETATM    5  O2  JSZ A1203      -3.218   0.328 -54.280  1.00 60.57      D    O  
+HETATM    6  C3  JSZ A1203      -3.780   1.031 -56.514  1.00 65.73      D    C  
+HETATM    7  O3  JSZ A1203      -1.339   0.031 -51.077  1.00 50.44      D    O  
+HETATM    8  C4  JSZ A1203      -1.837   0.666 -52.170  1.00 52.63      D    C  
+HETATM    9  O4  JSZ A1203      -2.009   4.557 -49.830  1.00 48.99      D    O  
+HETATM   10  C5  JSZ A1203      -2.059   2.087 -51.812  1.00 54.26      D    C  
+HETATM   11  O5  JSZ A1203      -3.434   7.602 -49.269  1.00 52.03      D    O  
+HETATM   12  C6  JSZ A1203      -2.582   3.266 -52.589  1.00 53.87      D    C  
+HETATM   13  C7  JSZ A1203      -1.672   2.242 -50.470  1.00 49.58      D    C  
+HETATM   14  C8  JSZ A1203      -1.256   0.953 -50.116  1.00 51.06      D    C  
+HETATM   15  C9  JSZ A1203      -0.790   0.684 -48.834  1.00 47.62      D    C  
+HETATM   16  C10 JSZ A1203      -0.741   1.714 -47.894  1.00 43.95      D    C  
+HETATM   17  C11 JSZ A1203      -1.153   3.000 -48.238  1.00 43.97      D    C  
+HETATM   18  C12 JSZ A1203      -1.626   3.273 -49.522  1.00 46.35      D    C  
+HETATM   19  C13 JSZ A1203      -3.211   5.191 -49.378  1.00 46.34      D    C  
+HETATM   20  C14 JSZ A1203      -3.439   6.485 -50.163  1.00 45.58      D    C  
+HETATM   21  C15 JSZ A1203      -2.358   6.713 -51.215  1.00 46.06      D    C  
+HETATM   22  C16 JSZ A1203      -2.679   7.679 -53.432  1.00 55.67      D    C  
+HETATM   23  C17 JSZ A1203      -3.010   8.966 -54.181  1.00 53.58      D    C  
+HETATM   24  C18 JSZ A1203      -1.360   7.099 -53.936  1.00 55.98      D    C  
+CONECT    1    3    5    8
+CONECT    2   21   22
+CONECT    3    1
+CONECT    4    5    6
+CONECT    5    1    4
+CONECT    6    4
+CONECT    7    8   14
+CONECT    8    1    7   10
+CONECT    9   18   19
+CONECT   10    8   12   13
+CONECT   11   20
+CONECT   12   10
+CONECT   13   10   14   18
+CONECT   14    7   13   15
+CONECT   15   14   16
+CONECT   16   15   17
+CONECT   17   16   18
+CONECT   18    9   13   17
+CONECT   19    9   20
+CONECT   20   11   19   21
+CONECT   21    2   20
+CONECT   22    2   23   24
+CONECT   23   22
+CONECT   24   22
+END
