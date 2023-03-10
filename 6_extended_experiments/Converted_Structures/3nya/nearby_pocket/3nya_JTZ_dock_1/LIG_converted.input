@@ -1,0 +1,64 @@
+units real
+atom_style full
+
+dimension 3
+boundary p p p
+
+bond_style hybrid harmonic
+angle_style hybrid harmonic
+dihedral_style hybrid multi/harmonic
+improper_style hybrid harmonic
+special_bonds lj 0.0 0.0 1.0 coul 0.0 0.0 1.0
+
+read_data LIG_converted.lmp
+
+pair_style lj/cut/coul/long 9.0 9.0
+pair_modify tail yes
+kspace_style pppm 1e-8
+
+pair_coeff 1 1   0.0700000   3.5500500
+pair_coeff 2 2   0.0460000   0.4000100
+pair_coeff 3 3   0.0220000   2.3519700
+pair_coeff 4 4   0.0460000   0.4000100
+pair_coeff 5 5   0.0550000   3.8754100
+pair_coeff 6 6   0.1520999   3.1537800
+pair_coeff 7 7   0.2000000   3.2963200
+pair_coeff 8 8   0.0680000   3.7239600
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 5 7   0.0447213   3.3408700
+pair_coeff 1 5   0.0264575   3.4677300
+pair_coeff 5 5   0.0100000   3.3854100
+pair_coeff 5 6   0.0390000   3.2696000
+pair_coeff 1 5   0.0264575   3.4677300
+pair_coeff 5 5   0.0100000   3.3854100
+pair_coeff 1 5   0.0264575   3.4677300
+pair_coeff 5 5   0.0100000   3.3854100
+pair_coeff 1 5   0.0264575   3.4677300
+pair_coeff 5 6   0.0390000   3.2696000
+pair_coeff 1 5   0.0264575   3.4677300
+pair_coeff 2 5   0.0214477   1.8927100
+pair_coeff 2 5   0.0214477   1.8927100
+pair_coeff 2 5   0.0214477   1.8927100
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 3 5   0.0148325   2.8686900
+pair_coeff 4 5   0.0214477   1.8927100
+pair_coeff 4 5   0.0214477   1.8927100
+
+pair_modify mix arithmetic
+
+thermo_style custom ebond eangle edihed eimp epair evdwl ecoul elong etail pe
+
+run 0
