@@ -1,2 +1,0 @@
-type,start,end
-L,1,298
