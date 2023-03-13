@@ -9,7 +9,7 @@ On a single NVidia T4 GPU, step 1 takes ~15 minutes, step 2 takes 35-40 minutes,
 
 We demonstrate this example on two cases:
 
-### 1. Fixing bad initial smina cross-docked structure to explore flip conformations and significantly improve ligand pose.
+### 1. Fix bad initial cross-docked structure: explore flip conformations and significantly improve ligand pose.
 
 ![Alt text](data/3r9h_github_figure.png?raw=true "Title")
 
