@@ -10,12 +10,16 @@ On a single NVidia T4 GPU, step 1 takes ~15 minutes, step 2 takes 35-40 minutes,
 We demonstrate this example on two cases:
 
 ### 1. Fix bad initial cross-docked structure, explore flip conformations and significantly improve ligand pose.
-Green is co-crystal, white is initial smina cross-docked structure, and magenta is aggressive 3T structure.
+In this case, we first cross-dock ligand extracted from 3r9h co-crystal onto CDK2 protein structure extracted from 1fin co-crystal. The original smina cross-docked result produces a completely wrong ligand pose. Using aggressive 3T, we can explore new ligand poses within a fully flexible protein pocket.
+
+Green is the experimental co-crystal structure (3r9h), white is the initial smina cross-docked structure (3r9h on 1fin), and magenta is the aggressive 3T structure (generated from the smina cross-dock initial structure).
 
 ![Alt text](data/3r9h_github_figure.png?raw=true "Title")
 
 ### 2. Exploring alternative binding modes in nearby pockets:
-White is co-crystal, green is aggressive 3T structure.
+In this case, we first self-dock ligand extracted from 3nya co-crystal onto ADRB2 protein structure extracted from 3nya co-crystal. The original smina self-docked result still sits in the original orthosteric binding site. Using aggressive 3T, we can explore ligand poses within the nearby extracellular vestibule binding site.
+
+White is the experimental co-crystal structure (3nya) and green is the aggressive 3T structure (generated from the smina self-dock initial structure).
 
 ![Alt text](data/3nya_github_figure.png?raw=true "Title")
 
